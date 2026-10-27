@@ -1440,18 +1440,18 @@ body.lockscreen::-webkit-scrollbar-thumb:hover {
     width: 100% !important;
     min-width: 0 !important;
   }
-  body.lockscreen #pos_table.table-responsive,
-  body.lockscreen .table-responsive > #pos_table {
+  body.lockscreen:not(.vspos-touch-ui) #pos_table.table-responsive,
+  body.lockscreen:not(.vspos-touch-ui) .table-responsive > #pos_table {
     display: table !important;
     overflow: visible !important;
     border: 0 !important;
   }
-  body.lockscreen #pos_table > thead > tr,
-  body.lockscreen #pos_table > tbody > tr {
+  body.lockscreen:not(.vspos-touch-ui) #pos_table > thead > tr,
+  body.lockscreen:not(.vspos-touch-ui) #pos_table > tbody > tr {
     display: table-row !important;
   }
-  body.lockscreen #pos_table > tbody > tr > td,
-  body.lockscreen #pos_table > thead > tr > th {
+  body.lockscreen:not(.vspos-touch-ui) #pos_table > tbody > tr > td,
+  body.lockscreen:not(.vspos-touch-ui) #pos_table > thead > tr > th {
     display: table-cell !important;
     vertical-align: middle !important;
     white-space: nowrap;
@@ -1490,8 +1490,8 @@ body.lockscreen::-webkit-scrollbar-thumb:hover {
   body.lockscreen #pos_table th.pos-th-subtotal {
     min-width: 90px !important;
   }
-  body.lockscreen #pos_table .display_currency.pos_line_total_text,
-  body.lockscreen #pos_table .pos_line_total_text {
+  body.lockscreen:not(.vspos-touch-ui) #pos_table .display_currency.pos_line_total_text,
+  body.lockscreen:not(.vspos-touch-ui) #pos_table .pos_line_total_text {
     white-space: nowrap !important;
     display: inline-block !important;
     text-align: right;

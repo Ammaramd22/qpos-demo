@@ -619,7 +619,8 @@
                     .vspos-cart-inner .input-group-addon,
                     .vspos-cart-inner .input-group-btn .btn { min-height: 40px; }
                     #pos_table_div, .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-                    #pos_table { min-width: 480px; }
+                    body:not(.vspos-touch-ui) #pos_table { min-width: 480px; }
+                    body.vspos-touch-ui #pos_table.vspos-ticket-cart { min-width: 0 !important; overflow: hidden; }
                     #pos_table th, #pos_table td { font-size: 11px; padding: 4px 5px; }
                 }
                 @media (max-width: 575px) {

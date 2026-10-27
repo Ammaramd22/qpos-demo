@@ -782,11 +782,14 @@ body.lockscreen #is_pop_mode ~ form #pos_table .pos-td-qty label.error,
 body.lockscreen:has(#is_pop_mode) #pos_table .pos-td-qty label.error {
     display: none !important;
 }
+@media (min-width: 901px) {
 body.lockscreen #pos_table.vspos-ticket-cart {
     table-layout: fixed !important;
     width: 100% !important;
 }
-/* 4 columns: Item | Qty | Rate | Total (+ slim No / remove) */
+/* 4 columns: Item | Qty | Rate | Total (+ slim No / remove).
+   Phone/tablet touch POS uses the card grid in pos-touch.css.
+   These minimums (qty 118px, rate 84px, total 100px) overflow a phone. */
 body.lockscreen #pos_table.vspos-ticket-cart col.pos-col-serial,
 body.lockscreen #pos_table.vspos-ticket-cart th.pos-th-serial,
 body.lockscreen #pos_table.vspos-ticket-cart td.pos-td-serial {
@@ -919,6 +922,7 @@ body.lockscreen #pos_table.vspos-ticket-cart thead th.pos-th-product {
 body.lockscreen #pos_table.vspos-ticket-cart thead th.pos-th-subtotal {
     text-align: right !important;
 }
+}
 body.lockscreen #pos_table .vspos-qty-stepper .btn,
 body.lockscreen #pos_table .vspos-qty-stepper .vspos-qty-btn {
     background: transparent !important;
@@ -945,12 +949,14 @@ body.lockscreen #pos_table .vspos-line-remove:hover {
     border-color: #ef4444 !important;
     color: #ef4444 !important;
 }
+@media (min-width: 901px) {
 body.lockscreen #pos_table > tbody > tr.product_row > td {
     overflow: visible !important;
 }
 body.lockscreen #pos_table .pos-td-subtotal {
     text-align: right !important;
     white-space: nowrap;
+}
 }
 body.lockscreen #pos_table td.pos-td-action {
     text-align: center !important;
@@ -2030,7 +2036,7 @@ html[data-vspos-theme="dark"] body.lockscreen .vspos-express-chip--bank .pos-fi-
     font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
+    color: var(--vspos-text-muted, #a3a3a3);
     margin-bottom: 4px;
 }
 .vspos-pay-v2 .vspos-pay-v2-hero-amount {
@@ -2059,20 +2065,27 @@ html[data-vspos-theme="dark"] body.lockscreen .vspos-express-chip--bank .pos-fi-
     font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin: 0;
+    color: var(--vspos-text-muted, #a3a3a3);
+    margin: 0 0 4px;
 }
 .vspos-pay-v2 .vspos-pay-v2-input {
     width: 100% !important;
     height: 48px !important;
     border-radius: 10px !important;
-    border: 1px solid #333 !important;
-    background: #0a0a0a !important;
-    color: #fafafa !important;
+    border: 1px solid var(--vspos-input-border, #333) !important;
+    background: var(--vspos-input-bg, #0a0a0a) !important;
+    color: var(--vspos-text, #fafafa) !important;
+    -webkit-text-fill-color: var(--vspos-text, #fafafa);
     font-size: 22px !important;
     font-weight: 800 !important;
     text-align: center !important;
     letter-spacing: 0.02em;
+    box-sizing: border-box;
+}
+.vspos-pay-v2 .vspos-pay-v2-input::placeholder {
+    color: var(--vspos-text-soft, #737373);
+    -webkit-text-fill-color: var(--vspos-text-soft, #737373);
+    opacity: 1;
 }
 .vspos-pay-v2 .vspos-pay-v2-input:focus {
     border-color: #f5c518 !important;
@@ -2084,7 +2097,7 @@ html[data-vspos-theme="dark"] body.lockscreen .vspos-express-chip--bank .pos-fi-
     align-items: center;
     margin-top: 10px;
     font-size: 12px;
-    color: #a3a3a3;
+    color: var(--vspos-text-muted, #a3a3a3);
     font-weight: 600;
 }
 .vspos-pay-v2 .vspos-pay-v2-change strong {

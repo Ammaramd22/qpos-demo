@@ -1087,9 +1087,9 @@
 					width: 100% !important;
 					font-size: 12px;
 				}
-				#pos_table .pos-th-unitprice,
-				#pos_table .pos-td-unitprice { display: none; }
-				#pos_table .pos-td-product { max-width: 140px; }
+				body:not(.vspos-touch-ui) #pos_table .pos-th-unitprice,
+				body:not(.vspos-touch-ui) #pos_table .pos-td-unitprice { display: none; }
+				body:not(.vspos-touch-ui) #pos_table .pos-td-product { max-width: 140px; }
 				.vspos-line-thumb { width: 34px; height: 34px; border-radius: 8px; }
 				.vspos-line-name { font-size: 12px; }
 				.vspos-qty-stepper input.pos_quantity { width: 52px !important; }

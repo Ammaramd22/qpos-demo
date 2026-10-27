@@ -383,10 +383,24 @@
             }, true);
         }
 
+        $('#vspos_touch_qty_modal').on('show.bs.modal', function () {
+            if (this.parentNode !== document.body) {
+                document.body.appendChild(this);
+            }
+        });
         $('#vspos_touch_qty_modal').on('shown.bs.modal', function () {
+            document.body.classList.add('vspos-touch-qty-open');
+            var backs = document.querySelectorAll('.modal-backdrop');
+            if (backs.length) {
+                backs[backs.length - 1].classList.add('vspos-touch-qty-backdrop');
+            }
             setActiveField('qty');
         });
         $('#vspos_touch_qty_modal').on('hidden.bs.modal', function () {
+            document.body.classList.remove('vspos-touch-qty-open');
+            document.querySelectorAll('.vspos-touch-qty-backdrop').forEach(function (el) {
+                el.classList.remove('vspos-touch-qty-backdrop');
+            });
             pendingVariationId = null;
             pendingDefaultRate = null;
             $('#vspos_touch_qty_input').val('1');

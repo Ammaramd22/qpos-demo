@@ -864,7 +864,27 @@ html[data-vspos-theme="light"] body.lockscreen .vspos-op-pay-total {
     border-color: #f5d78a !important;
 }
 
-/* Touch POS shells use hardcoded dark fills as well as variables. */
+/* Touch POS shells use hardcoded dark fills as well as variables.
+   html inherits into body-level modals (qty keypad is appended to body). */
+html[data-vspos-theme="light"] {
+    --touch-bg: #f8fafc;
+    --touch-panel: #ffffff;
+    --touch-border: #e2e8f0;
+    --touch-text: #111827;
+    --touch-muted: #4b5563;
+    --touch-soft: #4b5563;
+    --touch-meta: #374151;
+    --touch-surface: #ffffff;
+    --touch-surface-2: #f8fafc;
+    --touch-input: #ffffff;
+    --touch-input-border: #d1d5db;
+    --touch-price: #15803d;
+    --touch-hover: #f3f4f6;
+    --touch-addon-bg: #fff7d6;
+    --touch-raised: #f8fafc;
+    --touch-sunken: #f3f4f6;
+    --touch-key: #ffffff;
+}
 html[data-vspos-theme="light"] .vspos-touch-shell {
     --touch-bg: #f8fafc;
     --touch-panel: #ffffff;
@@ -928,10 +948,153 @@ html[data-vspos-theme="light"] .vspos-touch-cheque-btn--add {
     background: linear-gradient(180deg, #ffd84a, #f5c518) !important;
     color: #111111 !important;
 }
+html[data-vspos-theme="light"] .vspos-touch-pay-method kbd,
+html[data-vspos-theme="light"] body.vspos-touch-ui #vspos_mobile_pay_popup .vspos-touch-pay-popup-kbd {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    color: #374151 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-method.vspos-touch-pay-method--fullcash kbd {
+    background: rgba(0, 0, 0, 0.18) !important;
+    border: none !important;
+    color: #111111 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-method--cash {
+    background: #fffbeb !important;
+    border-color: #f5d78a !important;
+    color: #92400e !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-method--card {
+    background: #eff6ff !important;
+    border-color: #bfdbfe !important;
+    color: #1d4ed8 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-method--bank {
+    background: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+    color: #047857 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-method--credit {
+    background: #f5f3ff !important;
+    border-color: #ddd6fe !important;
+    color: #6d28d9 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-method--cheque {
+    background: #fff7ed !important;
+    border-color: #fed7aa !important;
+    color: #c2410c !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-meter--due strong {
+    color: #dc2626 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-meter--change strong,
+html[data-vspos-theme="light"] .vspos-touch-pay .vspos-pay-v2-change strong {
+    color: #15803d !important;
+}
+html[data-vspos-theme="light"] body.vspos-touch-ui #vspos_mobile_pay_popup .vspos-touch-pay-footer .vspos-pay-v2-sec--cancel {
+    background: #ffffff !important;
+    color: #b91c1c !important;
+    border: 1px solid #fecaca !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay .vspos-touch-key--clear {
+    background: #fef2f2 !important;
+    color: #b91c1c !important;
+    border-color: #fecaca !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay .vspos-touch-key--exact {
+    background: #fffbeb !important;
+    color: #92400e !important;
+    border-color: #f5d78a !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-line-amt {
+    color: #b45309 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-line-remove {
+    background: #fef2f2 !important;
+    border-color: #fecaca !important;
+    color: #b91c1c !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-clear-list {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #374151 !important;
+}
+html[data-vspos-theme="light"] #vspos_mobile_pay_popup .select2-dropdown,
+html[data-vspos-theme="light"] .vspos-touch-cheque-sheet .select2-dropdown,
+html[data-vspos-theme="light"] .vspos-touch-cheque-sheet-card .select2-dropdown {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+}
+html[data-vspos-theme="light"] #vspos_mobile_pay_popup .select2-search__field,
+html[data-vspos-theme="light"] .vspos-touch-cheque-sheet .select2-search__field {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+}
+html[data-vspos-theme="light"] #vspos_mobile_pay_popup .select2-results__option,
+html[data-vspos-theme="light"] .vspos-touch-cheque-sheet .select2-results__option {
+    color: #111827 !important;
+}
+html[data-vspos-theme="light"] #vspos_mobile_pay_popup .select2-results__option--highlighted[aria-selected],
+html[data-vspos-theme="light"] .vspos-touch-cheque-sheet .select2-results__option--highlighted[aria-selected] {
+    background: #f5c518 !important;
+    color: #111111 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-cheque-btn--cancel:hover {
+    background: #f3f4f6 !important;
+    border-color: #d1d5db !important;
+    color: #111827 !important;
+}
+html[data-vspos-theme="light"] body.vspos-cheque-dp-open .datepicker,
+html[data-vspos-theme="light"] body.vspos-mobile-pay-open .datepicker.dropdown-menu,
+html[data-vspos-theme="light"] .datepicker.dropdown-menu.vspos-dp--cheque {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12) !important;
+}
+html[data-vspos-theme="light"] body.vspos-cheque-dp-open .datepicker th,
+html[data-vspos-theme="light"] body.vspos-cheque-dp-open .datepicker td,
+html[data-vspos-theme="light"] body.vspos-cheque-dp-open .datepicker .datepicker-switch,
+html[data-vspos-theme="light"] body.vspos-mobile-pay-open .datepicker.dropdown-menu th,
+html[data-vspos-theme="light"] body.vspos-mobile-pay-open .datepicker.dropdown-menu td,
+html[data-vspos-theme="light"] .datepicker.dropdown-menu.vspos-dp--cheque th,
+html[data-vspos-theme="light"] .datepicker.dropdown-menu.vspos-dp--cheque td,
+html[data-vspos-theme="light"] .datepicker.dropdown-menu.vspos-dp--cheque .datepicker-switch {
+    color: #111827 !important;
+}
+html[data-vspos-theme="light"] body.vspos-cheque-dp-open .datepicker .dow,
+html[data-vspos-theme="light"] .datepicker.dropdown-menu.vspos-dp--cheque .dow {
+    color: #4b5563 !important;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-scroll {
+    scrollbar-color: #d1d5db #f3f4f6;
+}
+html[data-vspos-theme="light"] .vspos-touch-pay-scroll::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+}
 html[data-vspos-theme="light"] .vspos-touch-shell .product_box .text,
 html[data-vspos-theme="light"] .vspos-touch-shell .product_box .text_div,
 html[data-vspos-theme="light"] .vspos-touch-cat {
     color: #111827 !important;
+}
+html[data-vspos-theme="light"] body.lockscreen #pos_table .vspos-qty-stepper,
+html[data-vspos-theme="light"] body.lockscreen #pos_table .vspos-rate-field .pos_unit_price,
+html[data-vspos-theme="light"] body.lockscreen #pos_table .form-control.pos_unit_price,
+html[data-vspos-theme="light"] body.lockscreen #pos_table .vspos-qty-stepper .form-control.pos_quantity {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+}
+html[data-vspos-theme="light"] body.lockscreen #pos_table .vspos-qty-stepper .vspos-qty-btn,
+html[data-vspos-theme="light"] body.lockscreen #pos_table .vspos-qty-stepper .btn {
+    color: #92400e !important;
+}
+html[data-vspos-theme="light"] body.vspos-touch-ui .vspos-touch-shell #pos_table.vspos-ticket-cart tbody tr.product_row {
+    background: #ffffff !important;
+    border-color: #e5e7eb !important;
 }
 
 /* Dashboard colors are variables on .db-page in home/index.blade.php. */

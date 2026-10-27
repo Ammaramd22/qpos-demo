@@ -60,6 +60,7 @@
         {{-- Touch checkout: methods left · keypad right · multipay list below --}}
         <div class="vspos-touch-pay" id="vspos_touch_pay"
             data-default-payment-accounts="{{ is_string($default_location->default_payment_accounts ?? null) ? ($default_location->default_payment_accounts ?? '') : json_encode($default_location->default_payment_accounts ?? []) }}">
+            <div class="vspos-touch-pay-scroll">
             <div class="vspos-touch-pay-hero">
                 <div class="vspos-touch-pay-hero-main">
                     <div class="vspos-pay-v2-hero-label">@lang('sale.total_payable')</div>
@@ -172,6 +173,7 @@
                     @include('sale_pos.partials.touch_keypad')
                     <p class="vspos-touch-pay-hint">Enter amount → tap a method to add · repeat for split</p>
                 </div>
+            </div>
             </div>
 
             <div class="vspos-touch-pay-footer">
